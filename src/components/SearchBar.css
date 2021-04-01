@@ -1,0 +1,9 @@
+.searchWidth {
+    width: 20rem;
+}
+
+.containerWidth {
+    display:flex;
+  align-items:center;
+  justify-content:center;
+}

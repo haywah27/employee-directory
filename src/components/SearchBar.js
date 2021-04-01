@@ -1,13 +1,18 @@
-import { Form } from "react-bootstrap";
+import { Form, Container } from "react-bootstrap";
+import "./SearchBar.css";
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
-    <Form.Control
-      type="text"
-      placeholder="Search by First or Last Name"
-      value={searchTerm}
-      onChange={({ target }) => setSearchTerm(target.value.toLowerCase())}
-    />
+
+      <Container className="containerWidth">
+        <Form.Control
+        className="text-center searchWidth"
+        type="text"
+        placeholder="Search by First or Last Name"
+        value={searchTerm}
+        onChange={({ target }) => setSearchTerm(target.value.toLowerCase())}
+        />
+    </Container>
   );
 };
 
