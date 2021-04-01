@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import "./EmployeeTable.css"
 import { ArrowDown, ArrowUp } from 'react-bootstrap-icons';
 let nameArrow;
 let loginArrow;
@@ -19,7 +20,7 @@ const EmployeeTable = ({ searchTerm }) => {
   }, []);
 
   function handleSortByName() {
-    // sort array ascending or descending by first name
+    // sort array ascending or descending by last name
     if (!sorted) {
       findEmployees(
         employees.sort((a, b) => (a.name.last > b.name.last ? 1 : -1)),
@@ -38,7 +39,7 @@ const EmployeeTable = ({ searchTerm }) => {
   }
 
   function handleSortByLogin() {
-    // sort array ascending or descending by first name
+    // sort array ascending or descending by username
     if (!sorted) {
       findEmployees(
         employees.sort((a, b) => (a.login.username > b.login.username ? 1 : -1)),
@@ -56,6 +57,18 @@ const EmployeeTable = ({ searchTerm }) => {
       setSorted(false);
     }
   }
+
+  const EmployeeRow = ({ name, email, picture, login, i }) => (
+    <tr key={i}>
+      <td>
+        <img className="headshot" src={picture.medium} alt="headshot" />
+      </td>
+      <td>{name.first}</td>
+      <td>{name.last}</td>
+      <td>{email}</td>
+      <td>{login.username}</td>
+    </tr>
+  );
 
   return (
     <>
@@ -82,17 +95,5 @@ const EmployeeTable = ({ searchTerm }) => {
     </>
   );
 };
-
-const EmployeeRow = ({ name, email, picture, login, i }) => (
-  <tr key={i}>
-    <td>
-      <img src={picture.medium} alt="headshot" />
-    </td>
-    <td>{name.first}</td>
-    <td>{name.last}</td>
-    <td>{email}</td>
-    <td>{login.username}</td>
-  </tr>
-);
 
 export default EmployeeTable;
