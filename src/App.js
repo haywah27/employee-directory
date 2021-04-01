@@ -1,12 +1,13 @@
 import React from "react";
 import API from "../src/utils/API"
 import { Table } from 'react-bootstrap'
+// import {Table} from 'react-bootstrap/Table'
 function App () {
     console.log(API)
     return (
         
         <>
-            <Table>
+            <Table striped bordered hover responsive>
                 <thead>
                     <tr>
                         <td>First Name</td>
