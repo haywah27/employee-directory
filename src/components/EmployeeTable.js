@@ -3,6 +3,19 @@ import { Table } from "react-bootstrap";
 
 const EmployeeTable = ({ searchTerm }) => {
   const [employees, setEmployees] = useState([]);
+  const [ sorted, setSorted] = useState(false);
+  const [ data, findEmployees ] = useState(employees);
+
+  function handleSortByName() {
+    // sort array ascending or descending by first name
+    if (!sorted) {
+        findEmployees(employees.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1));
+        setSorted(true);
+    } else {
+        findEmployees(employees.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1));
+        setSorted(false);
+    }
+}
 
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=100")
@@ -18,7 +31,7 @@ const EmployeeTable = ({ searchTerm }) => {
         <thead>
           <tr>
             <td>Headshot</td>
-            <td>First Name</td>
+            <td><button onClick={handleSortByName}>First Name</button></td>
             <td>Last Name</td>
             <td>Email</td>
           </tr>
@@ -26,7 +39,7 @@ const EmployeeTable = ({ searchTerm }) => {
         <tbody>
           {employees
             .filter(
-              (e) => !searchTerm || e.name.first.indexOf(searchTerm) !== -1
+              (e) => !searchTerm || e.name.last.indexOf(searchTerm) !== -1
             )
             .map(({ picture, name, email }, i) => (
               <EmployeeRow picture={picture} name={name} email={email} i={i} />
