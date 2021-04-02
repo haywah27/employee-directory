@@ -3,7 +3,6 @@ import "./SearchBar.css";
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
-
       <Container className="containerWidth">
         <Form.Control
         className="text-center searchWidth"

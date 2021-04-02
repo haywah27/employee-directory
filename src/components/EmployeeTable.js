@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Container, Button } from "react-bootstrap";
 import "./EmployeeTable.css";
 import { ArrowDown, ArrowUp } from "react-bootstrap-icons";
+
 let nameArrow;
 let loginArrow;
 
@@ -70,34 +71,37 @@ const EmployeeTable = ({ searchTerm }) => {
 
   return (
     <>
-      <Table striped bordered hover responsive className="text-center">
-        <thead>
-          <tr>
-            <td>Headshot</td>
-            <td>First Name</td>
-            <td>
-              <button onClick={handleSortByName}>Last Name{nameArrow}</button>
-            </td>
-            <td>Email</td>
-            <td>
-              <button onClick={handleSortByLogin}>Username{loginArrow}</button>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          {employees
-            .filter((e) => !searchTerm || e.email.indexOf(searchTerm) !== -1)
-            .map(({ picture, name, email, login }, i) => (
-              <EmployeeRow
-                picture={picture}
-                name={name}
-                email={email}
-                login={login}
-                i={i}
-              />
-            ))}
-        </tbody>
-      </Table>
+      <Container>
+        <div >
+          
+          
+        </div>
+
+        <Table striped bordered hover responsive className="text-center">
+          <thead >
+            <tr >
+              <td>Headshot</td>
+              <td>First Name</td>
+              <td><Button variant="info" onClick={handleSortByName}>Last Name{nameArrow}</Button></td>
+              <td>Email</td>
+              <td><Button variant="info" onClick={handleSortByLogin}>Username{loginArrow}</Button></td>
+            </tr>
+          </thead>
+          <tbody>
+            {employees
+              .filter((e) => !searchTerm || e.email.indexOf(searchTerm) !== -1)
+              .map(({ picture, name, email, login }, i) => (
+                <EmployeeRow
+                  picture={picture}
+                  name={name}
+                  email={email}
+                  login={login}
+                  i={i}
+                />
+              ))}
+          </tbody>
+        </Table>
+      </Container>
     </>
   );
 };
