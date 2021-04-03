@@ -2,12 +2,6 @@ table {
   font-family: Courier, monospace;
 }
 
-.rowContent {
-  border: 2px;
-    border-color: red;
-    border-style: solid;
-} 
-
 .headshot {
   border-radius: 50%;
 }
@@ -17,11 +11,11 @@ table {
 }
 
 .table-hover tbody tr:hover {
-  color: yellow !important;
-  background-color: brown;
+  color: #efa032 !important;
+  background-color: #052939!important;
 }
 
 
 .table-striped>tbody>tr:nth-child(odd) {
-  background-color: red;
+  background-color: rgba(260, 191, 175, 0.2);
 }
