@@ -3,7 +3,6 @@
 }
 
 .containerWidth {
-    
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,4 +12,6 @@
 .form {
     font-family: Courier, monospace;
     font-size:20px!important;
+    box-shadow: 3px 3px 10px #052939,
+    -2px 1px 10px #052939;
 }
