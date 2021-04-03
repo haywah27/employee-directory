@@ -27,6 +27,7 @@ const EmployeeTable = ({ searchTerm }) => {
       findEmployees(
         employees.sort((a, b) => (a.name.last > b.name.last ? 1 : -1))
       );
+      console.log("data: ", data[0]);
       nameArrow = <ArrowUp />;
       loginArrow = "";
       emailArrow = "";
@@ -85,15 +86,17 @@ const EmployeeTable = ({ searchTerm }) => {
   }
 
   const EmployeeRow = ({ name, email, picture, login, i }) => (
-    <tr key={i}>
-      <td>
-        <img className="headshot" src={picture.medium} alt="headshot" />
-      </td>
-      <td>{name.first}</td>
-      <td>{name.last}</td>
-      <td>{email}</td>
-      <td>{login.username}</td>
-    </tr>
+    < React.Fragment key={i} >
+      <tr>
+        <td>
+          <img className="headshot" src={picture.medium} alt="headshot" />
+        </td>
+        <td>{name.first}</td>
+        <td>{name.last}</td>
+        <td>{email}</td>
+        <td>{login.username}</td>
+      </tr>
+    </React.Fragment>
   );
 
 
@@ -113,13 +116,13 @@ const EmployeeTable = ({ searchTerm }) => {
           <tbody>
             {employees
               .filter((e) => !searchTerm || e.email.indexOf(searchTerm) !== -1)
-              .map(({ picture, name, email, login }, i) => (
+              .map(({ picture, name, email, login }) => (
                 <EmployeeRow
+                  key={login.uuid}
                   picture={picture}
                   name={name}
                   email={email}
                   login={login}
-                  i={i}
                 />
               ))}
           </tbody>

@@ -1,8 +1,5 @@
 import "./Header.css";
-import React, { useState } from "react";
-
-
-import { Jumbotron, Button } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 
 function Header(){
   return (
