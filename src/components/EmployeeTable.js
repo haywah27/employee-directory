@@ -5,6 +5,7 @@ import { ArrowDown, ArrowUp } from "react-bootstrap-icons";
 
 let nameArrow;
 let loginArrow;
+let emailArrow;
 
 const EmployeeTable = ({ searchTerm }) => {
   const [employees, setEmployees] = useState([]);
@@ -27,12 +28,35 @@ const EmployeeTable = ({ searchTerm }) => {
       );
       nameArrow = <ArrowUp />;
       loginArrow = "";
+      emailArrow = "";
       setSorted(true);
     } else {
       findEmployees(
         employees.sort((a, b) => (a.name.last > b.name.last ? -1 : 1))
       );
       nameArrow = <ArrowDown />;
+      loginArrow = "";
+      emailArrow = "";
+      setSorted(false);
+    }
+  }
+
+  function handleSortByEmail() {
+    // sort array ascending or descending by username
+    if (!sorted) {
+      findEmployees(
+        employees.sort((a, b) => (a.email > b.email ? 1 : -1))
+      );
+      emailArrow = <ArrowUp />;
+      nameArrow = "";
+      loginArrow = "";
+      setSorted(true);
+    } else {
+      findEmployees(
+        employees.sort((a, b) => (a.email > b.email ? -1 : 1))
+      );
+      emailArrow = <ArrowDown />;
+      nameArrow = "";
       loginArrow = "";
       setSorted(false);
     }
@@ -46,6 +70,7 @@ const EmployeeTable = ({ searchTerm }) => {
       );
       loginArrow = <ArrowUp />;
       nameArrow = "";
+      emailArrow = "";
       setSorted(true);
     } else {
       findEmployees(
@@ -53,6 +78,7 @@ const EmployeeTable = ({ searchTerm }) => {
       );
       loginArrow = <ArrowDown />;
       nameArrow = "";
+      emailArrow = "";
       setSorted(false);
     }
   }
@@ -79,7 +105,7 @@ const EmployeeTable = ({ searchTerm }) => {
               <td>Headshot</td>
               <td>First</td>
               <td><Button variant="info" onClick={handleSortByName}>Last{nameArrow}</Button></td>
-              <td>Email</td>
+              <td><Button variant="info" onClick={handleSortByEmail}>Email{emailArrow}</Button></td>
               <td><Button variant="info" onClick={handleSortByLogin}>Username{loginArrow}</Button></td>
             </tr>
           </thead>
