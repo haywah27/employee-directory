@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Container, Button } from "react-bootstrap";
 import "./EmployeeTable.css";
+import "./Button.css";
 import { ArrowDown, ArrowUp } from "react-bootstrap-icons";
 
 let nameArrow;
@@ -104,9 +105,9 @@ const EmployeeTable = ({ searchTerm }) => {
             <tr>
               <td>Headshot</td>
               <td>First</td>
-              <td><Button variant="info" onClick={handleSortByName}>Last{nameArrow}</Button></td>
-              <td><Button variant="info" onClick={handleSortByEmail}>Email{emailArrow}</Button></td>
-              <td><Button variant="info" onClick={handleSortByLogin}>Username{loginArrow}</Button></td>
+              <td><Button className="button" variant="info" onClick={handleSortByName}>Last{nameArrow}</Button></td>
+              <td><Button className="button" variant="info" onClick={handleSortByEmail}>Email{emailArrow}</Button></td>
+              <td><Button className="button" variant="info" onClick={handleSortByLogin}>Username{loginArrow}</Button></td>
             </tr>
           </thead>
           <tbody>
