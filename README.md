@@ -3,14 +3,14 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 
 ## Link to webpage
-...coming soon!
+https://haywah27.github.io/employee-directory/
 
 ## Description
 This app provides the ability to view an entire employee directory at once so that the user has quick access to employee information.
 
 ## Deployed Website
 ...coming soon!
-<!-- <img src="./readme-img/index.png" alt="deployed-index"> -->
+<img src="./public/assets/Employees.gif" alt="deployed-index">
 
 ## Technology Used
 * React
