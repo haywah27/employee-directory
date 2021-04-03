@@ -1,0 +1,27 @@
+.jumbo {
+    background-color: #052939;
+}
+.title {
+  /* font-size: 5rem;
+  text-align: center;
+  color: #fcedd8;
+  /* font-family: "Niconne", cursive; */
+  /* font-weight: 700;
+  text-shadow: 5px 1px 0px #eb452b, 10px 2px 0px #efa032, 15px 3px 0px #46b59b,
+    20px 4px 0px #017e7f, 25px 5px 0px #052939; */
+
+    margin-top: 40px;
+    font-family: Courier, monospace;
+    font-size: 70px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 20px #ff99cc,
+      -2px 1px 30px #ff99cc;
+}
+
+p {
+    color: #efa032;
+    font-family: Courier, monospace;
+}

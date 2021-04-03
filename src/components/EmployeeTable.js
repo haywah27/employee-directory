@@ -69,20 +69,16 @@ const EmployeeTable = ({ searchTerm }) => {
     </tr>
   );
 
+
   return (
     <>
       <Container>
-        <div >
-          
-          
-        </div>
-
         <Table striped bordered hover responsive className="text-center">
-          <thead >
-            <tr >
+          <thead>
+            <tr>
               <td>Headshot</td>
-              <td>First Name</td>
-              <td><Button variant="info" onClick={handleSortByName}>Last Name{nameArrow}</Button></td>
+              <td>First</td>
+              <td><Button variant="info" onClick={handleSortByName}>Last{nameArrow}</Button></td>
               <td>Email</td>
               <td><Button variant="info" onClick={handleSortByLogin}>Username{loginArrow}</Button></td>
             </tr>

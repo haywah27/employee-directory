@@ -5,9 +5,10 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
       <Container className="containerWidth">
         <Form.Control
-        className="text-center searchWidth"
+        size="lg"
+        className="text-center searchWidth form"
         type="text"
-        placeholder="Search by First or Last Name"
+        placeholder="search first or last name"
         value={searchTerm}
         onChange={({ target }) => setSearchTerm(target.value.toLowerCase())}
         />

@@ -7,14 +7,15 @@ import { Jumbotron, Button } from "react-bootstrap";
 function Header(){
   return (
   <>
-    <Jumbotron className="text-center align-items-center">
-      <h1>Employee Directory</h1>
+    <Jumbotron className="text-center align-items-center jumbo">
+      <h1 className="title">Employee Directory</h1>
+      <br />
       <p>
-        Search for a specific employee by name in the search field.
+        Search for a specific employee by name
         <br />
         OR
         <br />
-        Filter employees by last name or username by clicking the buttons.
+        Filter employees by clicking desired field
       </p>
     </Jumbotron>
 
