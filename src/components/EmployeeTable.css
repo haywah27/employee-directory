@@ -1,0 +1,27 @@
+table {
+  font-family: Courier, monospace;
+}
+
+.rowContent {
+  border: 2px;
+    border-color: red;
+    border-style: solid;
+} 
+
+.headshot {
+  border-radius: 50%;
+}
+
+.table-bordered {
+  border: 5px double orange !important;
+}
+
+.table-hover tbody tr:hover {
+  color: yellow !important;
+  background-color: brown;
+}
+
+
+.table-striped>tbody>tr:nth-child(odd) {
+  background-color: red;
+}
