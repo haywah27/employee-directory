@@ -9,7 +9,6 @@ https://haywah27.github.io/employee-directory/
 This app provides the ability to view an entire employee directory at once so that the user has quick access to employee information.
 
 ## Deployed Website
-...coming soon!
 <img src="./public/assets/Employees.gif" alt="deployed-index">
 
 ## Technology Used
