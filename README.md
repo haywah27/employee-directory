@@ -1,6 +1,6 @@
 # Employee-Directory
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-5C8BB3)](https://choosealicense.com/licenses/mit/)
 
 ## Link to webpage
 https://haywah27.github.io/employee-directory/
